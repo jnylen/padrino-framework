@@ -1,4 +1,4 @@
-require 'mustermann/sinatra'
+require 'mustermann19/sinatra'
 
 module Padrino
   module PathRouter
@@ -50,7 +50,7 @@ module Padrino
       # Returns true if handler is an instance of Mustermann.
       #
       def mustermann?
-        handler.instance_of?(Mustermann::Sinatra)
+        handler.instance_of?(Mustermann19::Sinatra)
       end
 
       ##
@@ -80,7 +80,7 @@ module Padrino
         @handler ||=
           case @path
           when String
-            Mustermann.new(@path, :capture => @capture, :uri_decode => false)
+            Mustermann19.new(@path, :capture => @capture, :uri_decode => false)
           when Regexp
             /^(?:#{@path})$/
           else
